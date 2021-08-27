@@ -1,7 +1,7 @@
 information=dict()
 SavingsAccount=[]
 CurrentAccount=[]
-'''-----------Code Details--------
+'''-----------Code Details--------------------
 Savings                             Current
             0----Name
             1----AccountNumber
@@ -12,7 +12,7 @@ Savings                             Current
             *(7----PhoneNumber)
 '''
 
-'''-------Account Requirement Help----'''
+'''-------Account Requirement Help-------------------'''
 def help():
     print("Basic Requirements: Name")
     print("Savings Account: you will need to deposit 2000tk to create Savings Account")
@@ -21,7 +21,7 @@ def help():
     print("Current Account: you will need to deposit 5000 tk & a trade licence number to create Current Account")
     print("No withdraw limit but account's minimum balance should be 5000tk")
     print("Thank you")
-'''---------------------------------------------'''
+'''-----------------------------------------------------------------'''
 
 '''------Create Saving Account---------'''
 def CreateSavingsAccount():
@@ -32,10 +32,10 @@ def CreateSavingsAccount():
     passWord = input("Pass Word  :")
 
     savings(name,accountNumber,balance,wth,passWord)
-'''---------------------------'''
+'''------------------------------------------------------'''
 
 
-'''------Create Current Account---------'''
+'''------Create Current Account--------------------------'''
 def CreateCurrentAccount():
     name = input("Name    :")
     accountNumber = input("Account Number : ")
@@ -45,9 +45,9 @@ def CreateCurrentAccount():
 
     current(name, accountNumber, balance, license,passWord)
 
-'''-------------------------------'''
+'''--------------------------------------------------'''
 
-'''----------Add Savings Account--------------'''
+'''----------Add Savings Account-------------------------'''
 def savings(name,AccountNumber,balance,maxWithdraw,passWord):
     SavingsAccount.clear()
     SavingsAccount.append(name)
@@ -71,10 +71,10 @@ def savings(name,AccountNumber,balance,maxWithdraw,passWord):
         if s==1: CreateSavingsAccount()
         if s==2: CreateCurrentAccount()
 
-'''-----------------------'''
+'''--------------------------------------------'''
 
 
-'''------------Add Current Account---------------'''
+'''------------Add Current Account------------------------'''
 def current(name='',AccountNumber="",balance=5000.00,licence='',passWord=""):
     CurrentAccount.clear()
     CurrentAccount.append(name)
@@ -99,9 +99,9 @@ def current(name='',AccountNumber="",balance=5000.00,licence='',passWord=""):
         if s == 1: CreateCurrentAccount()
         if s == 2: CreateSavingsAccount()
 
-'''-------------------------------------'''
+'''------------------------------------------------'''
 
-'''--------pwd check-----'''
+'''--------pwd check---------------'''
 def password(accountNumber,pwd):
     if information[accountNumber][6]==pwd:
         return True
@@ -110,7 +110,7 @@ def password(accountNumber,pwd):
         return False
 '''-------------------------------------'''
 
-'''---------Check Account--------'''
+'''---------Check Account-----------------'''
 def checkAccount(accountNumber):
     if accountNumber in information.keys():
         return True
@@ -120,16 +120,16 @@ def checkAccount(accountNumber):
 '''-----------------------------------'''
 
 
-'''--------Deposit Amount------'''
+'''--------Deposit Amount--------------'''
 def deposit(accountNumber,amount):
     if checkAccount(accountNumber):
         information[accountNumber][2]+=amount
         print("Successful")
     else:
         print("Failed")
-'''---------------------------'''
+'''------------------------------------'''
 
-'''--- Withdraw amount-------'''
+'''----------- Withdraw amount-------------'''
 def cashOut(accountNumber,amount):
     if information[accountNumber][2] - amount > information[accountNumber][3]:
         information[accountNumber][2]-=amount
@@ -149,16 +149,15 @@ def withdraw(accountNumber,amount):
         cashOut(accountNumber, amount)
     else:
         checkLimit(accountNumber,amount)
-
 '''--------------------------------------'''
+
 '''------------Background Checking------------'''
 def backgroundCheck(accountNumber,pwd):
     if checkAccount(accountNumber) and password(accountNumber,pwd):
         return True
     else:
         return False
-
-'''----------------'''
+'''--------------------------------------'''
 
 
 '''------------Personal Details---------'''
@@ -168,7 +167,6 @@ def savingsccountDetails(accountNumber):
     print("Account Number: ",information[accountNumber][1])
     print("Balance       : ",information[accountNumber][2])
     print("Withdraw Limit: ",information[accountNumber][4])
-
 
 def currentAccountDetails(accountNumber):
     print("Account Type  : " + "Current Account")
@@ -183,6 +181,9 @@ def info(accountNumber,pwd):
             currentAccountDetails(accountNumber)
         else:
             savingsccountDetails(accountNumber)
+
+'''-----------------------------------------'''
+
 '''-------------All Account Details----------'''
 def AllDetails():
     print("Total Account: ",len(information))
@@ -191,6 +192,16 @@ def AllDetails():
         print(information[i])
         print()
 '''-------------------'''
+
+
+
+
+
+
+
+
+
+
 
 '''---------------Main Portion-----------'''
 
