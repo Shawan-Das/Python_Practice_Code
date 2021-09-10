@@ -39,6 +39,7 @@ Class & objects
 '''        inheritance      '''
 
 # class qdrl:
+#
 #     def __init__(self,a,b,c,d):
 #         self.a = a
 #         self.b = b
@@ -46,15 +47,19 @@ Class & objects
 #         self.d = d
 #
 #     def perimeter(self):
-#         print(self.a + self.d + self.c + self.d)
+#         print(self.a + self.b + self.c + self.d)
 #
 #
 # class Rectangle(qdrl):
+#
 #     def __init__(self,a,b):
 #         super().__init__(a,b,a,b)
 #
 #     def area(self):
 #         print("Area of a rectangle: ",self.a * self.b)
+#     def perimeter(self):
+#         print("Rentangular part: perimeter: ", 2*(self.a+self.b))
+#
 #
 # class Square(Rectangle):
 #     def __init__(self,a):
@@ -62,6 +67,9 @@ Class & objects
 #
 #     def area(self):
 #         print("Area of a Square: ",self.a * self.a)
+#
+#     def perimeter(self):
+#         print("Squre part: perimeter: ", 4*self.a)
 #
 #
 # q1= Square(4)
@@ -77,7 +85,8 @@ Class & objects
 '''------------Practice Portion--------------'''
 
 # class information:
-#     def __init__(self, name=" ",ID="--",semester=0,dept=''):
+#
+#     def __init__(self, name=" ",ID="--",semester=" ",dept=''):
 #         self.name=name
 #         self.id=ID
 #         self.semester=semester
@@ -93,20 +102,22 @@ Class & objects
 #
 # n=int(input("Total Student: "))
 #
-# info=[]
-#
+# info=dict()
 # for i in range(n):
 #     name=    input("Name       : ")
 #     id=      input("ID         : ")
 #     Semester=input("Semester   : ")
 #     dept=    input("Department : ")
+#
+#
 #     temp=information(name,id,Semester,dept)
-#     info.append(temp)
+#     info[id]=temp
 #
 #
-# for i in info:
-#     i.print_info()
-
+# for i in info.keys():
+#     info[i].print_info()
+#
+# info["19101001"].print_info()
 
 '''-----------------------!!!!!!!!!!!!!!!!!!!---------------------'''
 
@@ -114,4 +125,60 @@ Class & objects
 
 
 #------------
+
+
+
+'''-------------------Other Portion----------------------------'''
+
+# class student():
+#
+#     department = "CSE"
+#
+#     def __init__(self):
+#         self.Name="Shawan Das"
+#         self.ID="19101020"
+#         self.Semester="3-1"
+#
+#
+#     def printInfo(self):
+#         print(f"Name : {self.Name} ID: {self.ID} Semester: {self.Semester} Department: {self.department}")
+#
+#
+# std=student()         #Student class object
+#
+# std.department="EEE"
+# std.Name="Tanmoy"
+# std.ID="19101013"
+#
+#
+# std.printInfo()
+
+
+
+# x=69
+#
+# def fun():
+#     y= globals() ['x']
+#     y+= 10
+#     print(y,end=":")
+#     x=100
+#     print(x)
+#
+#
+# fun()
+# x=70
+# print(x)
+# fun()
+
+
+
+
+
+
+
+
+
+
+
+
 
