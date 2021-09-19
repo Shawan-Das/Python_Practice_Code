@@ -170,10 +170,10 @@ Class & objects
 # print(x)
 # fun()
 '''
-*
-* *
-* * *
-* * * *
+    *
+   * *
+  * * *
+ * * * *
 * * * * *
 .........
 '''
@@ -214,6 +214,37 @@ Class & objects
 #
 #     for j in range(1,(i*2)):
 #         print("*",end=" ")
+#
+#     print()
+'''------------------------------------------'''
+'''-----------------------------------------'''
+# space=n
+# for i in range(1,n+1):
+#     for s in range(1,space):
+#         print(" ",end="")
+#
+#     space-=1
+#
+#     for j in range(1,i+1):
+#         if (i==1 or i==2) or (i>2 and (j==1 or j==i) or i==n):
+#             print("*", end=" ")
+#         else:
+#             print(" ",end=" ")
+#
+#     print()
+#
+# space=(n*2)-1
+# for i in range(1,n+1):
+#     for s in range(1,space):
+#         print(" ",end="")
+#
+#     space-=2
+#
+#     for j in range(1,(i*2)):
+#         if i==1 or i==n or (i>1 and (j==1 or j==i*2-1)):
+#             print("*", end=" ")
+#         else:
+#             print(" ",end=" ")
 #
 #     print()
 '''------------------------------------------'''
@@ -267,3 +298,65 @@ Class & objects
 #     print()
 
 '''----------------------------------'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ignore part
+
+
+# class school():
+#     def __init__(self, name, year):
+#         self.school_name=name
+#         self.passing_year=year
+#
+#     def infoS(self):
+#         print(f"School: {self.school_name}  SSC Batch: {self.passing_year}")
+#
+# class college():
+#     def __init__(self, name, year):
+#         self.college_name=name
+#         self.passing_year=year
+#
+#     def infoC(self):
+#         print(f"College: {self.college_name}  HSC Batch: {self.passing_year}")
+#
+# class university():
+#     def __init__(self, name, year):
+#         self.university = name
+#         self.year = year
+#
+#     def infoU(self):
+#         print(f"College: {self.university}  HSC Batch: {self.year}")
+#
+#
+# class student(school,college,):
+#     def __init__(self,name,id,sName,sYear,cName,cYear):
+#         super().__init__(sName,sYear)
+#         super().__init__(cName,cYear)
+#         self.name=name
+#         self.id=id
+#     def printInfo(self):
+#         print(f"Name: {self.name}  ID: {self.id}")
+#
+#
+#
+# temp=student("Shawan Das","19101020","K.L.Jubilee School & College","2016","Dhaka Imperial College","2018")
+#
+# temp.printInfo()
+# temp.infoS()
+# # temp.infoC()
